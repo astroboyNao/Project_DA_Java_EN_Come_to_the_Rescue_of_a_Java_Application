@@ -1,6 +1,6 @@
 package com.hemebiotech.analytics.repositories;
 
-import java.util.TreeMap;
+import java.util.Map;
 /**
  * The Interface ISymptomWriter.
  */
@@ -11,5 +11,5 @@ public interface ISymptomWriter {
      *
      * @param analyticsSymptom the analytics symptom
      */
-    public void saveAnalyticsSymptom(TreeMap<String, Integer> analyticsSymptom);
+    public void saveAnalyticsSymptom(Map<String, Integer> analyticsSymptom);
 }

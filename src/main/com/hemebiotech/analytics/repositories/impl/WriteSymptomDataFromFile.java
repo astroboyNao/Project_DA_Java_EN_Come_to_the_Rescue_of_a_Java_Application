@@ -2,7 +2,7 @@ package com.hemebiotech.analytics.repositories.impl;
 
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.TreeMap;
+import java.util.Map;
 
 import org.springframework.stereotype.Repository;
 
@@ -28,7 +28,7 @@ public class WriteSymptomDataFromFile implements ISymptomWriter {
 	 * @param analyticsSymptom the analytics symptom
 	 */
 	@Override
-	public void saveAnalyticsSymptom(TreeMap<String, Integer> analyticsSymptom) {
+	public void saveAnalyticsSymptom(Map<String, Integer> analyticsSymptom) {
 		try (FileWriter writer = new FileWriter(configProperties.getOutFileName())) {
 			analyticsSymptom.entrySet().stream().forEach(mapEntry -> {
 				try {

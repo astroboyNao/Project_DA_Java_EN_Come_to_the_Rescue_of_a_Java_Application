@@ -27,6 +27,7 @@ public class AnalyticsCounter {
 	 * Process counts the number of occurrences per symptom in the data source
 	 */
 	public void process() {
+		// use a treeMap for ordering, if you work with large data you can use linkedHashMap
 		TreeMap<String, Integer> tmap = new TreeMap<String, Integer>();
 
 		this.symptomReader.GetSymptoms().stream().forEach((String key) -> {
