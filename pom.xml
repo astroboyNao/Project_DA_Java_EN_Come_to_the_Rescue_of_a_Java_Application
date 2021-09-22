@@ -1,42 +1,52 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.5.4</version>
+		<relativePath /> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>com.hemebiotech.analytics</groupId>
+	<artifactId>symptome</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>symptome</name>
+	<properties>
+		<java.version>16</java.version>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+		</dependency>
+	</dependencies>
 
-  <groupId>Project_DA_Java_EN_Come_to_the_Rescue_of_a_Java_Application</groupId>
-  <artifactId>Project_DA_Java_EN_Come_to_the_Rescue_of_a_Java_Application</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <name>SymptomApplication</name>
+	<build>
+		<plugins>
+			<plugin>
+				<!-- Permet au jar de devenir executable -->
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				 <configuration>
+				 	<!-- Génère dans le manifest la conf Main-Class et Start-Class -->
+			        <mainClass>${start-class}</mainClass>
+			        <layout>ZIP</layout>
+			      </configuration>
+				 <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+			</plugin>
+		</plugins>
+	</build>
 
-  <properties>
-  	<spring.boot.version>2.5.4</spring.boot.version>
-  </properties>  
-  <dependencies>
-	  <dependency>
-	    <groupId>org.springframework.boot</groupId>
-	    <artifactId>spring-boot-starter-test</artifactId>
-	    <version>${spring.boot.version}</version>
-	    <scope>test</scope>
-	  </dependency>
-  </dependencies>
-  
-  <build>
-    <sourceDirectory>src</sourceDirectory>
-    <plugins>
-        <plugin>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-maven-plugin</artifactId>
-            
-            <configuration>
-                <mainClass>com.hemebiotech.analytics.Application</mainClass>
-            </configuration>
-            
-            <executions>
-                <execution>
-                    <goals>
-                        <goal>repackage</goal>
-                    </goals>
-                </execution>
-            </executions>
-        </plugin>
-    </plugins>
-</build>
 </project>
