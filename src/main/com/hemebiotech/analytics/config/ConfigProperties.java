@@ -2,18 +2,17 @@ package com.hemebiotech.analytics.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
-import lombok.Getter;
-
+import lombok.Data;
 /**
  * The Class ConfigProperties.
  */
 @ConfigurationProperties(prefix = "config") 
-@Getter
+@Data
 public class ConfigProperties {
     
     /** The in file name. */
-    private String inFileName = "symptoms.txt";
+    private String inFileName;
     
     /** The out file name. */
-    private String outFileName = "result.out";
+    private String outFileName;
 }																																																																																									

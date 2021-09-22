@@ -6,6 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.PropertySource;
 
 import com.hemebiotech.analytics.config.ConfigProperties;
 import com.hemebiotech.analytics.repositories.impl.ReadSymptomDataFromFile;
@@ -17,6 +18,7 @@ import com.hemebiotech.analytics.services.AnalyticsCounter;
  */
 @ComponentScan("com.hemebiotech.analytics")
 @SpringBootApplication
+@PropertySource("classpath:application.properties")
 @EnableConfigurationProperties(ConfigProperties.class)
 public class Application {
 	;
